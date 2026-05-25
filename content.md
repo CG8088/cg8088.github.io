@@ -11,8 +11,6 @@
 
 #### 逐光而行，万事可期
 🌻🌻🌻[🌻](https://cg8088.github.io/stock-report/index2.html)🌻🌻🌻🌻🌻🌻🌻🌻
-> 韩珂
+> 多看少动不贪心
 
-- [菲利华(300395)](https://quote.eastmoney.com/sz300395.html) 0515中线趋势股
-- [东方国信(300166)](https://quote.eastmoney.com/sz300166.html) 0518中线趋势股
 
