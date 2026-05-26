@@ -93,8 +93,18 @@
             margin: 12px 0;
             display: block;
         }
+        /* 图片加载失败隐藏破损图标 */
+        img:not([src]),
+        img[src=""],
+        img:-moz-broken,
+        img:invalid {
+            display: none !important;
+        }
+        img::before {
+            content: "";
+            display: none;
+        }
 
-        
         a, a:link, a:visited, a:hover, a:active {
             color: inherit !important;
             text-decoration: none !important;
@@ -127,7 +137,16 @@ window.addEventListener('load', function(){
 fetch('content.md')
 .then(res=>res.text())
 .then(mdText=>{
-    document.getElementById("mdBox").innerHTML = marked.parse(mdText);
+    const box = document.getElementById("mdBox");
+    box.innerHTML = marked.parse(mdText);
+
+    // 图片加载失败自动隐藏
+    const imgs = box.querySelectorAll('img');
+    imgs.forEach(img => {
+        img.onerror = function() {
+            this.style.display = 'none';
+        }
+    });
 })
 .catch(()=>{
     document.getElementById("mdBox").innerText = "内容加载失败";
